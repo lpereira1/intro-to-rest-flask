@@ -14,11 +14,12 @@ $(document).ready(function(e) {
     // now you can use the json object in javascript just like you normally would
 
      var list = '';
+     // loop through the jason and append the name of each top level element to the list
      $.each(json, function(index, element) {
          list += '<li>' + element.name + '</li>';
      });
 
-     $('#sandbox-info').append(list);
+     $('#repos-info').append(list);
 
 });
 
@@ -33,7 +34,7 @@ $(document).ready(function(e) {
 
 <div class="container">
 
-     <ul id="sandbox-info">
+     <ul id="repos-info">
 
     </ul>
 
