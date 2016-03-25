@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+<script type="text/javascript">
+$(document).ready(function(e) {
+
+    // this statement takes the json that was passed from render_template and converts to javascript object.
+    // The tojson|safe part is to make sure it escapes correctly.
+
+    var json = {{ data|tojson|safe }};
+    console.log(json);
+
+    // print raw json - just to show it was returned
+     $('#display-json').html(JSON.stringify(json));
+
+});
+
+</script>
+
+<div class="jumbotron">
+      <div class="container">
+        <h1>Show Repositories</h1>
+        <p> </p>
+      </div>
+</div>
+
+<div class="container">
+    <p id="display-json"></p>
+
+
+</div>
+
+
+{% endblock %}
